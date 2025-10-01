@@ -9,7 +9,7 @@ public class Factura {
     private double total;
     private List<DetalleFactura> detalles;
 
-    public Factura(int numero, Cliente cliente, String fecha, List<DetalleFactura> detalles) {
+    public Factura(int numero, Cliente cliente, String fecha, double totalFactura, List<DetalleFactura> detalles) {
         this.numero = numero;
         this.cliente = cliente;
         this.fecha = fecha;
