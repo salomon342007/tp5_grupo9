@@ -4,10 +4,10 @@ public class Producto {
     private int codigo;
     private String descripcion;
     private double precioUnitario;
-    private double descuento;  //si nho teine es cero, si aplica es 25 o 30 :b
+    private int descuento; // 0, 25 o 30 porcentaje
     private int stock;
 
-    public Producto(int codigo, String descripcion, double precioUnitario, double descuento, int stock) {
+    public Producto(int codigo, String descripcion, double precioUnitario, int descuento, int stock) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioUnitario = precioUnitario;
@@ -16,10 +16,28 @@ public class Producto {
     }
 
     public int getCodigo() { return codigo; }
-    public String getDescripcion() { return descripcion; }
-    public double getPrecioUnitario() { return precioUnitario; }
-    public double getDescuento() { return descuento; }
-    public int getStock() { return stock; }
+    public void setCodigo(int codigo) { this.codigo = codigo; }
 
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+
+    public double getPrecioUnitario() { return precioUnitario; }
+    public void setPrecioUnitario(double precioUnitario) { this.precioUnitario = precioUnitario; }
+
+    public int getDescuento() { return descuento; }
+    public void setDescuento(int descuento) { this.descuento = descuento; }
+
+    public int getStock() { return stock; }
     public void setStock(int stock) { this.stock = stock; }
+
+    public double obtenerPrecioConDescuento() {
+        if (descuento <= 0) return precioUnitario;
+        return precioUnitario * (1 - descuento / 100.0);
+    }
+
+    
+    public String toString() {
+        return String.format("%d | %s | $%.2f | desc: %d%% | stock: %d",
+                codigo, descripcion, precioUnitario, descuento, stock);
+    }
 }
