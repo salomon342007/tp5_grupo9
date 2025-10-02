@@ -1,11 +1,10 @@
+package ar.edu.unju.escmi.tp5.dominio;
 
-<<<<<<< HEAD
-=======
 public class Producto {
     private int codigo;
     private String descripcion;
     private double precioUnitario;
-    private int descuento; // 0, 25 o 30 porcentaje
+    private int descuento; // 0, 25, 30
     private int stock;
 
     public Producto(int codigo, String descripcion, double precioUnitario, int descuento, int stock) {
@@ -36,10 +35,9 @@ public class Producto {
         return precioUnitario * (1 - descuento / 100.0);
     }
 
-    
+    @Override
     public String toString() {
         return String.format("%d | %s | $%.2f | desc: %d%% | stock: %d",
                 codigo, descripcion, precioUnitario, descuento, stock);
     }
 }
->>>>>>> b2c87d0cbabf10fd06f6ab3cad83cdaf7eb03359
