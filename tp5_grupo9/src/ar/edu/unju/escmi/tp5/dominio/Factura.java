@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Factura {
+    
     private static int contador = 1;
 
     private int numero;
