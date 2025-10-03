@@ -4,11 +4,9 @@ import java.util.Scanner;
 import ar.edu.unju.escmi.tp5.dominio.Producto;
 import ar.edu.unju.escmi.tp5.collections.CollectionProducto;
 import ar.edu.unju.escmi.tp5.collections.CollectionStock;
-import ar.edu.unju.escmi.tp5.servicio.ClienteService;
-import ar.edu.unju.escmi.tp5.servicio.EncargadoService;
-import ar.edu.unju.escmi.tp5.servicio.ProductoService;
-import ar.edu.unju.escmi.tp5.servicio.StockService;
-import ar.edu.unju.escmi.tp5.servicio.VentaService;
+import ar.edu.unju.escmi.tp5.dominio.EncargadodeVentas;
+import ar.edu.unju.escmi.tp5.dominio.AgenteAdministrativo;
+import ar.edu.unju.escmi.tp5.dominio.Cliente;
 
 public class Main {
 
@@ -51,9 +49,9 @@ public class Main {
             opcion = readInt();
 
             switch (opcion) {
-                case 1 -> EncargadoService.mostrarVentas();
-                case 2 -> EncargadoService.mostrarTotalVentas();
-                case 3 -> StockService.verificarStock();
+                case 1 -> EncargadodeVentas.mostrarVentas();
+                case 2 -> EncargadodeVentas.mostrarTotalVentas();
+                case 3 -> EncargadodeVentas.verificarStock();
                 case 0 -> {}
                 default -> System.out.println("Opción inválida.");
             }
@@ -66,13 +64,15 @@ public class Main {
             System.out.println("\n--- MENÚ AGENTE ADMINISTRATIVO ---");
             System.out.println("1 - Alta de producto");
             System.out.println("2 - Realizar venta");
+            System.out.println("3 - Listar productos");
             System.out.println("0 - Volver");
             System.out.print("Opción: ");
             opcion = readInt();
 
             switch (opcion) {
-                case 1 -> ProductoService.altaProducto();
-                case 2 -> VentaService.realizarVenta();
+                case 1 -> AgenteAdministrativo.altaProducto();
+                case 2 -> AgenteAdministrativo.realizarVenta();
+                case 3 -> AgenteAdministrativo.listarProductos();
                 case 0 -> {}
                 default -> System.out.println("Opción inválida.");
             }
@@ -89,7 +89,7 @@ public class Main {
             opcion = readInt();
 
             switch (opcion) {
-                case 1 -> ClienteService.buscarFacturaPorNumero();
+                case 1 -> Cliente.buscarFacturaPorNumero();
                 case 0 -> {}
                 default -> System.out.println("Opción inválida.");
             }

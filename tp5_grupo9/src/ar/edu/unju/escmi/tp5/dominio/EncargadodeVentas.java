@@ -1,12 +1,23 @@
-package ar.edu.unju.escmi.tp5.servicio;
+package ar.edu.unju.escmi.tp5.dominio;
 
 import java.util.Scanner;
+
+import ar.edu.unju.escmi.tp5.collections.CollectionFactura;
 import ar.edu.unju.escmi.tp5.collections.CollectionProducto;
 import ar.edu.unju.escmi.tp5.collections.CollectionStock;
-import ar.edu.unju.escmi.tp5.dominio.Producto;
 
-public class StockService {
+public class EncargadodeVentas {
 
+    public static void mostrarVentas() {
+        System.out.println("\n=== LISTA DE VENTAS ===");
+        CollectionFactura.listarFacturas();
+    }
+
+    public static void mostrarTotalVentas() {
+        double total = CollectionFactura.calcularTotalVentas();
+        System.out.println("\n=== TOTAL DE VENTAS ===");
+        System.out.println("Monto total facturado: $" + total);
+    }
     private static Scanner scanner = new Scanner(System.in);
 
     public static void verificarStock() {

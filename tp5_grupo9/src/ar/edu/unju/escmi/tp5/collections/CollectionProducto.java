@@ -29,4 +29,12 @@ public class CollectionProducto {
         System.out.println("Productos cargados:");
         for (Producto p : productos) System.out.println(p);
     }
+    public static void precargaEjemplo() {
+        Producto p1 = new Producto(1001, "Fideo Knorr Spaghetti x 500 gr", 1200.00, 0, 5000);
+        Producto p2 = new Producto(1002, "Arroz Largo Añejo 1kg", 950.00, 25, 2000);
+        CollectionProducto.agregarProducto(p1);
+        CollectionStock.setStock(p1.getCodigo(), p1.getStock());
+        CollectionProducto.agregarProducto(p2);
+        CollectionStock.setStock(p2.getCodigo(), p2.getStock());
+    }
 }
