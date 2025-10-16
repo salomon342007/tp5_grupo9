@@ -1,7 +1,13 @@
-integrantes del grupo 9:
-Francisico Diaz: FranciscoDiaz-01
-Stefano Modena: salomon342007
-Bruno Fernandez:
-Jorge Fernandez: Colturas
-Jamal Bazan: jamaledm
-Thiago segobia:
+Integrantes del Grupo 9:
+
+Francisco Díaz – FranciscoDiaz-01
+
+Stefano Modena – salomon342007
+
+Bruno Fernández - brunofernandez877
+
+Jorge Fernández – Colturas
+
+Jamal Bazán – jamaledm
+
+Thiago Segobia -
