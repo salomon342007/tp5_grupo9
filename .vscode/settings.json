@@ -1,5 +1,8 @@
 {
-  "java.project.sourcePaths": ["src"],
+  "java.project.sourcePaths": [
+    "src/ar/edu/unju/escmi/tp5/principal",
+    "src/ar/edu/unju/escmi/tp5/collections"
+  ],
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": [
     "lib/**/*.jar"

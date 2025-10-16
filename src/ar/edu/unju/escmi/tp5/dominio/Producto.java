@@ -2,12 +2,9 @@ package ar.edu.unju.escmi.tp5.dominio;
 
 import java.util.Objects;
 
-/**
- * Representa un producto con su stock interno (cantidadTotal).
- * Contiene operaciones para actualizar stock y calcular precio con descuento.
- */
+
 public class Producto {
-    // atributos (lowerCamelCase, estilo Java)
+   
     private int codigoProducto;
     private String descripcion;
     private double precioUnitario;
@@ -37,8 +34,7 @@ public class Producto {
         return precioUnitario * (1.0 - (descuentoPorc / 100.0));
     }
 
-    // Getters mínimos para uso interno (no getters/setters en UML, pero necesarios
-    // en código)
+    
     public int getCodigoProducto() {
         return codigoProducto;
     }

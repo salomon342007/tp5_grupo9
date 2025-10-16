@@ -5,9 +5,9 @@ import java.util.List;
 
 import ar.edu.unju.escmi.tp5.dominio.Producto;
 
-/**
- * Maneja la collection de productos. Atributo público y estático.
- */
+
+ // Maneja la collection de productos. Atributo público y estático.
+ 
 public class CollectionProducto {
     public static List<Producto> productos = new ArrayList<>();
 

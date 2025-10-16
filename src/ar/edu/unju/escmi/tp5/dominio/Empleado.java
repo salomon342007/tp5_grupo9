@@ -1,8 +1,8 @@
 package ar.edu.unju.escmi.tp5.dominio;
 
-/**
- * Empleado simple con legajo y método para mostrar datos.
- */
+
+ // Empleado simple con legajo y método para mostrar datos.
+ 
 public class Empleado {
     private String apellido;
     private String nombre;

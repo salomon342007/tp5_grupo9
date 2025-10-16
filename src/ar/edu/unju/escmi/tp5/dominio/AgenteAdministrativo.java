@@ -6,11 +6,10 @@ import java.util.List;
 import ar.edu.unju.escmi.tp5.collections.CollectionFactura;
 import ar.edu.unju.escmi.tp5.collections.CollectionProducto;
 
-/**
- * AgenteAdministrativo: carga productos y realiza ventas.
- * No usa reflexión; utiliza Factura.setTotal(...) cuando hace descuentos
- * globales.
- */
+
+ // AgenteAdministrativo: carga productos y realiza ventas.
+
+ 
 public class AgenteAdministrativo {
 
     // Da de alta un producto en la CollectionProducto (verifica existencia por
@@ -19,13 +18,11 @@ public class AgenteAdministrativo {
         return CollectionProducto.agregarProducto(producto);
     }
 
-    /**
-     * Realiza una venta:
-     * - Ajusta precios unitarios de cada DetalleFactura según tipo de cliente
-     * (mayorista/minorista)
-     * - Actualiza stock de cada producto
-     * - Genera Factura y la guarda en CollectionFactura
-     */
+    
+     // Realiza una venta:
+     // Ajusta precios unitarios de cada DetalleFactura según tipo de cliente
+     
+     
     public static Factura realizarVenta(Cliente cliente, List<DetalleFactura> items) {
         // crear factura con número simple (por ejemplo, size+1)
         int nro = CollectionFactura.facturas.size() + 1;

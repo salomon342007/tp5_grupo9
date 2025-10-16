@@ -2,10 +2,7 @@ package ar.edu.unju.escmi.tp5.dominio;
 
 import java.util.List;
 
-/**
- * Cliente que compra por unidad. Si presenta dni y obraSocialPAMI true -> 10%
- * descuento sobre total.
- */
+
 public class ClienteMinorista extends Cliente {
     private String dni;
     private boolean obraSocialPAMI;
