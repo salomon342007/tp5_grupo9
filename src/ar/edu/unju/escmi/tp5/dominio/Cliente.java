@@ -2,11 +2,7 @@ package ar.edu.unju.escmi.tp5.dominio;
 
 import java.util.List;
 
-/**
- * Clase abstracta Cliente. Define comportamiento polimórfico
- * calcularTotalCompra.
- * NOTA: método abstracto es de instancia (no puede ser static).
- */
+
 public abstract class Cliente {
     protected String apellido;
     protected String nombre;
@@ -18,7 +14,7 @@ public abstract class Cliente {
         this.direccion = direccion;
     }
 
-    // Método polimórfico: cada tipo de cliente calcula el total según su lógica
+   
     public abstract double calcularTotalCompra(List<DetalleFactura> items);
 
     public String getNombreCompleto() {

@@ -1,9 +1,8 @@
 package ar.edu.unju.escmi.tp5.dominio;
 
-/**
- * Detalle de factura: asocia un producto con cantidad y calcula importe.
- * Es parte de Factura (composición).
- */
+
+ // Detalle de factura: asocia un producto con cantidad y calcula importe.
+
 public class DetalleFactura {
     private Producto producto;
     private int cantidad;
@@ -24,7 +23,7 @@ public class DetalleFactura {
         return cantidad * precioUnitario;
     }
 
-    // setters/getters simples (necesarios en lógica)
+    
     public Producto getProducto() {
         return producto;
     }

@@ -5,9 +5,9 @@ import java.util.List;
 
 import ar.edu.unju.escmi.tp5.dominio.Factura;
 
-/**
- * Collection de facturas (public static). Precarga, agregar y buscar.
- */
+
+ //Collection de facturas, Precarga, agregar y buscar.
+
 public class CollectionFactura {
     public static List<Factura> facturas = new ArrayList<>();
 

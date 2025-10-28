@@ -2,10 +2,7 @@ package ar.edu.unju.escmi.tp5.dominio;
 
 import java.util.List;
 
-/**
- * Cliente que compra por mayor: cada bulto = 10 unidades y precio por unidad es
- * la mitad.
- */
+
 public class ClienteMayorista extends Cliente {
     private String codigoCliente;
 
@@ -18,10 +15,9 @@ public class ClienteMayorista extends Cliente {
         return codigoCliente;
     }
 
-    /**
-     * Calcula total donde cada unidad sale al 50% del precio unitario base.
-     * (El detalle viene con cantidad en unidades)
-     */
+    
+     // Calcula total donde cada unidad sale al 50% del precio unitario base.
+    
     @Override
     public double calcularTotalCompra(List<DetalleFactura> items) {
         double total = 0.0;

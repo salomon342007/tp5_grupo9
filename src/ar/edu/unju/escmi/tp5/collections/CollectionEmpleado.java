@@ -5,9 +5,9 @@ import java.util.List;
 
 import ar.edu.unju.escmi.tp5.dominio.Empleado;
 
-/**
- * Collection de empleados (public static) y métodos de precarga.
- */
+
+ // Collection de empleados (public static) y métodos de precarga.
+
 public class CollectionEmpleado {
     public static List<Empleado> empleados = new ArrayList<>();
 

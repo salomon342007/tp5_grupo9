@@ -7,9 +7,8 @@ import ar.edu.unju.escmi.tp5.dominio.Cliente;
 import ar.edu.unju.escmi.tp5.dominio.ClienteMayorista;
 import ar.edu.unju.escmi.tp5.dominio.ClienteMinorista;
 
-/**
- * Collection de clientes (public static). Incluye precarga y búsquedas simples.
- */
+
+ // Collection de clientes.
 public class CollectionCliente {
     public static List<Cliente> clientes = new ArrayList<>();
 
@@ -24,7 +23,7 @@ public class CollectionCliente {
         clientes.add(c);
     }
 
-    // Buscar por "codigo" (si es mayorista se busca codigoCliente, si minorista se
+    // Buscar por "codigo" (si es mayorista se busca codigoCliente, si es minorista se
     // busca dni)
     public static Cliente buscarPorCodigo(String codigo) {
         for (Cliente c : clientes) {

@@ -4,10 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Factura: encabezado + lista de DetalleFactura (composición).
- * Ahora incluye setTotal() para evitar uso de reflexión.
- */
+
 public class Factura {
     private int numero;
     private LocalDate fecha;
@@ -23,7 +20,7 @@ public class Factura {
         this.total = 0.0;
     }
 
-    // Agrega detalle (composición): el detalle "pertenece" a la factura
+    // Agrega detalle: el detalle "pertenece" a la factura
     public void agregarDetalle(DetalleFactura det) {
         this.detalles.add(det);
         recalcularTotal();
@@ -44,12 +41,12 @@ public class Factura {
         calcularTotal();
     }
 
-    // Setter explícito para total (evita usar reflexión en otras clases)
+    
     public void setTotal(double total) {
         this.total = total;
     }
 
-    // Getters
+
     public List<DetalleFactura> getDetalles() {
         return detalles;
     }

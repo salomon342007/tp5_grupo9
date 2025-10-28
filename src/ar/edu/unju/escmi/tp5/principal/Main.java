@@ -15,9 +15,9 @@ import ar.edu.unju.escmi.tp5.dominio.EncargadoDeVentas;
 import ar.edu.unju.escmi.tp5.dominio.Factura;
 import ar.edu.unju.escmi.tp5.dominio.Producto;
 
-/**
- * Main de prueba para precargar collections y simular una venta.
- */
+
+ // Main de prueba para precargar collections y simular una venta.
+ 
 public class Main {
     public static void main(String[] args) {
         // Precargar datos

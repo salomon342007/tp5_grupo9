@@ -6,10 +6,7 @@ import ar.edu.unju.escmi.tp5.collections.CollectionFactura;
 import ar.edu.unju.escmi.tp5.collections.CollectionProducto;
 import ar.edu.unju.escmi.tp5.collections.CollectionEmpleado;
 
-/**
- * Encargado de ventas: consulta ventas, total acumulado y verifica stock.
- * Métodos públicos y estáticos (según especificación).
- */
+
 public class EncargadoDeVentas {
 
     // Muestra todas las facturas (usa CollectionFactura)
@@ -34,7 +31,7 @@ public class EncargadoDeVentas {
         return sum;
     }
 
-    // Ejemplo de uso de empleados (reportes)
+    // Ejemplo de uso de empleados 
     public static List<Empleado> listarEmpleados() {
         return CollectionEmpleado.empleados;
     }
