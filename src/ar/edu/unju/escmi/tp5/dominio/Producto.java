@@ -4,75 +4,45 @@ import java.util.Objects;
 
 
 public class Producto {
-   
-    private int codigoProducto;
+    private int codigo;
     private String descripcion;
     private double precioUnitario;
-    private int descuentoPorc; // 0, 25, 30, etc.
-    private int cantidadTotal;
+    private int descuento; // 0, 25, 30
+    private int stock;
 
-    // Constructor (necesario para precarga)
-    public Producto(int codigoProducto, String descripcion, double precioUnitario, int descuentoPorc,
-            int cantidadTotal) {
-        this.codigoProducto = codigoProducto;
+    public Producto(int codigo, String descripcion, double precioUnitario, int descuento, int stock) {
+        this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioUnitario = precioUnitario;
-        this.descuentoPorc = descuentoPorc;
-        this.cantidadTotal = cantidadTotal;
+        this.descuento = descuento;
+        this.stock = stock;
     }
 
-    // Actualiza stock relativo (positivo para sumar, negativo para restar)
-    public void actualizarStock(int delta) {
-        this.cantidadTotal += delta;
-        if (this.cantidadTotal < 0)
-            this.cantidadTotal = 0; // protección simple
+    public int getCodigo() { return codigo; }
+    public String getDescripcion() { return descripcion; }
+    public double getPrecioUnitario() { return precioUnitario; }
+    public int getDescuento() { return descuento; }
+    public int getStock() { return stock; }
+    public void setStock(int stock) { this.stock = stock; }
+
+    // Precio unitario aplicando descuento del producto
+    public double getPrecioConDescuentoProducto() {
+        return precioUnitario * (1 - descuento / 100.0);
     }
 
-    // Precio unitario aplicando el descuento del producto (no incluye descuentos
-    // por tipo de cliente)
-    public double obtenerPrecioConDescuento() {
-        return precioUnitario * (1.0 - (descuentoPorc / 100.0));
-    }
-
-    
-    public int getCodigoProducto() {
-        return codigoProducto;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public double getPrecioUnitario() {
-        return precioUnitario;
-    }
-
-    public int getDescuentoPorc() {
-        return descuentoPorc;
-    }
-
-    public int getCantidadTotal() {
-        return cantidadTotal;
+    // Actualiza stock restando cantidad (unidades). Retorna true si pudo restar.
+    public boolean actualizarStock(int cantidad) {
+        if (cantidad <= stock) {
+            stock -= cantidad;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public String toString() {
-        return "[" + codigoProducto + "] " + descripcion + " $ " + precioUnitario + " (desc " + descuentoPorc
-                + "%) stock: " + cantidadTotal;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (!(o instanceof Producto))
-            return false;
-        Producto p = (Producto) o;
-        return codigoProducto == p.codigoProducto;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(codigoProducto);
+        return codigo + " - " + descripcion + " $ " + String.format("%.2f", precioUnitario) +
+               " (stock:" + stock + ", desc:" + descuento + "%)";
     }
 }

@@ -12,31 +12,31 @@ import ar.edu.unju.escmi.tp5.dominio.ClienteMinorista;
 public class CollectionCliente {
     public static List<Cliente> clientes = new ArrayList<>();
 
-    public static void precargarClientes() {
-        clientes.clear();
-        clientes.add(new ClienteMayorista("Perez", "Juan", "Calle Falsa 123", "MAY001"));
-        clientes.add(new ClienteMinorista("Gomez", "Ana", "Av. Siempreviva 456", "12345678", true));
-        clientes.add(new ClienteMinorista("Lopez", "Carlos", "Gral. Paz 789", "87654321", false));
-    }
-
-    public static void agregarCliente(Cliente c) {
+    public static boolean registroCliente(Cliente c) {
+        // evita duplicados por codigo si es mayorista
+        if (c.getCodigoCliente() > 0) {
+            for (Cliente ex : clientes) if (ex.getCodigoCliente() == c.getCodigoCliente()) return false;
+        }
         clientes.add(c);
+        return true;
     }
 
-    // Buscar por "codigo" (si es mayorista se busca codigoCliente, si es minorista se
-    // busca dni)
-    public static Cliente buscarPorCodigo(String codigo) {
+    public static Cliente buscarClientePorCodigo(int cod) {
         for (Cliente c : clientes) {
-            if (c instanceof ClienteMayorista) {
-                ClienteMayorista m = (ClienteMayorista) c;
-                if (m.getCodigoCliente().equalsIgnoreCase(codigo))
-                    return c;
-            } else if (c instanceof ClienteMinorista) {
-                ClienteMinorista mi = (ClienteMinorista) c;
-                if (mi.getDni().equalsIgnoreCase(codigo))
-                    return c;
-            }
+            if (c.getCodigoCliente() == cod) return c;
         }
         return null;
+    }
+
+    public static void precargarClientes() {
+        clientes.clear();
+        ClienteMayorista cm = new ClienteMayorista("Juan", "Pérez", "Av. San Martín 123", 9001);
+        ClienteMinorista cmin1 = new ClienteMinorista("Ana", "Gómez", "Calle 9 de Julio 456", "12345678", true);
+        cmin1.asignarCodCliente(9002);
+        ClienteMinorista cmin2 = new ClienteMinorista("Luis", "Sosa", "Belgrano 789", "87654321", false);
+        cmin2.asignarCodCliente(9003);
+        clientes.add(cm);
+        clientes.add(cmin1);
+        clientes.add(cmin2);
     }
 }

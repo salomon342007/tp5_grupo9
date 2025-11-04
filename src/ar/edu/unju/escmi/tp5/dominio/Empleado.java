@@ -1,24 +1,22 @@
 package ar.edu.unju.escmi.tp5.dominio;
 
+public abstract class Empleado {
+    protected int legajo;
+    protected String contrasenia;
+    protected String nombre;
 
- // Empleado simple con legajo y método para mostrar datos.
- 
-public class Empleado {
-    private String apellido;
-    private String nombre;
-    private String legajo;
-
-    public Empleado(String apellido, String nombre, String legajo) {
-        this.apellido = apellido;
-        this.nombre = nombre;
+    public Empleado(int legajo, String nombre, String contrasenia) {
         this.legajo = legajo;
+        this.nombre = nombre;
+        this.contrasenia = contrasenia;
     }
 
-    public String mostrarDatos() {
-        return legajo + " - " + nombre + " " + apellido;
-    }
+    public int getLegajo() { return legajo; }
+    public String getNombre() { return nombre; }
+    public String getContrasenia() { return contrasenia; }
 
-    public String getLegajo() {
-        return legajo;
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " {legajo=" + legajo + ", nombre=" + nombre + "}";
     }
 }
